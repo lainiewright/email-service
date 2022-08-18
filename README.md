@@ -15,7 +15,7 @@ sure to set the `MAIL_GUN_DOMAIN_NAME` environment variable for your account's d
 with `sbt run`.
 
 ## API
-This service contains one endpoint.
+This service contains one POST endpoint, which sends an email.
 
 ```
 POST /email HTTP/1.1
@@ -33,17 +33,17 @@ Content-Type: application/json
 ```
 
 ## Testing
-The is one unit test that tests the POST route. Run it like this: 
+There is one unit test that tests the POST route. Run it like this: 
 
 ```sbt test```
 
-## Implemenation
-I opened the assignment on the afternoon of 08/16, and worked on it on and off over  a 24-hour period. Although I have used
-the Scalatra framework to build Scala services in the past, I decided to choose Akka this time, since it is the industry 
+## Implemenation Details
+I opened the assignment on the afternoon of 08/16, and worked on it on and off over a 24-hour period. Although I have used
+the Scalatra framework to build Scala services in the past, I decided to try Akka for the first time, since it is the industry 
 standard, and I have been curious about it for a while. [Akka](https://doc.akka.io/docs/akka/current/typed/guide/introduction.html)
 "uses the actor model, which provides a level of abstraction that makes it easier to write correct concurrent, parallel 
 and distributed systems." I used [this template](https://github.com/akka/akka-http-quickstart-scala.g8) to get started.
-I also found the Akka documentation to be very good and fairly easy to follow.
+I also found the Akka documentation to be very good and fairly easy to follow. I manually tested the service, and was able to receive email in my inbox from both providers.
 
 ## Tradeoffs
 I did some basic input validation on the request body, that checks that all fields are present and all strings. I deferred
